@@ -13,7 +13,8 @@ const connect = () => {
         run();
     }
 
-    client.connectRTUBuffered("/dev/ttyUSB0", {dataBits: 8, stopBits: 1, baudRate: 115200})
+    client.connectTCP("192.168.0.212", {port: 15001})
+    //client.connectRTUBuffered("/dev/ttyUSB0", {dataBits: 8, stopBits: 1, baudRate: 115200})
     .then(setClient)
     .then(function() {console.log("Connected");})
 }
